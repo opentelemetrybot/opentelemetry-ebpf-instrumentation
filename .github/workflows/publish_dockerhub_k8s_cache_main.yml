@@ -7,11 +7,12 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   build-and-push-image:
+    permissions:
+      id-token: write # required for Docker OIDC authentication
+      packages: write # required for pushing to GitHub Container Registry
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: opentelemetry-ebpf-k8s-cache
