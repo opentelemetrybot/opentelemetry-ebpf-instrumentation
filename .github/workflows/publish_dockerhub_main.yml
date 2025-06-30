@@ -7,12 +7,12 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write # required for pushing to ghcr.io
     env:
       IMAGE_NAME: ebpf-instrument
     steps:
