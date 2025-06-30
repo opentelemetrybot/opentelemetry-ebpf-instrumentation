@@ -19,16 +19,15 @@ on:
 
 permissions:
   contents: read
-  # Required for codecov
-  checks: write
-  pull-requests: write
-  # Required for uploading artifacts
-  actions: write
 
 jobs:
   test:
     name: test
     runs-on: ubuntu-latest
+    permissions:
+      checks: write # Required for codecov
+      pull-requests: write # Required for codecov  
+      actions: write # Required for uploading artifacts
     strategy:
       matrix:
         go: [ '1.22' ]
