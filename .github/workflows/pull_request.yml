@@ -8,14 +8,14 @@ on:
 
 permissions:
   contents: read
-  # Required for codecov
-  checks: write
-  pull-requests: write
 
 jobs:
   test:
     name: test
     runs-on: ubuntu-latest
+    permissions:
+      checks: write # Required for codecov
+      pull-requests: write # Required for codecov
     strategy:
       matrix:
         go: [ '1.24' ]
