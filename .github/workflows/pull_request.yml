@@ -8,13 +8,13 @@ on:
 
 permissions:
   contents: read
-  # Required for codecov
-  checks: write
-  pull-requests: write
 
 jobs:
   test:
     name: test
+    permissions:
+      checks: write # required for codecov
+      pull-requests: write # required for codecov
     runs-on: ubuntu-latest
     strategy:
       matrix:

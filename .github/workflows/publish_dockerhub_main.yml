@@ -7,11 +7,12 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   build-and-push-image:
+    permissions:
+      id-token: write # required for Docker login
+      packages: write # required for publishing packages
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: ebpf-instrument
