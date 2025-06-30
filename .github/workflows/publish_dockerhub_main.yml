@@ -7,12 +7,14 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # required for Docker OIDC authentication
+      packages: write # required for pushing to GHCR
     env:
       IMAGE_NAME: ebpf-instrument
     steps:
