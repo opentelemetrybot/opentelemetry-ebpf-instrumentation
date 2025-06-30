@@ -7,12 +7,14 @@ on:
 
 permissions:
   contents: read
-  id-token: write
-  packages: write
 
 jobs:
   build-and-push-image:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # required for docker registry authentication
+      packages: write # required for publishing to ghcr.io
     env:
       IMAGE_NAME: opentelemetry-ebpf-k8s-cache
     steps:
