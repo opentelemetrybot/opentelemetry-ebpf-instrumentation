@@ -12,7 +12,6 @@ permissions:
 jobs:
   test:
     permissions:
-      contents: read
       # Required for codecov
       checks: write
       pull-requests: write
