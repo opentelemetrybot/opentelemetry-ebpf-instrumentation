@@ -11,9 +11,8 @@ permissions:
 jobs:
   build-and-push-image:
     permissions:
-      contents: read
-      id-token: write # required for Docker Hub authentication
-      packages: write # required for GitHub Container Registry publishing
+      id-token: write
+      packages: write
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: opentelemetry-ebpf-k8s-cache
