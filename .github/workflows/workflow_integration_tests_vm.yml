@@ -19,14 +19,14 @@ on:
 
 permissions:
   contents: read
-  # Required for codecov
-  checks: write
-  pull-requests: write
-  # Required for uploading artifacts
-  actions: write
 
 jobs:
   test:
+    permissions:
+      contents: read
+      checks: write # required for codecov
+      pull-requests: write # required for codecov
+      actions: write # required for uploading artifacts
     name: test
     runs-on: ubuntu-latest
     strategy:
