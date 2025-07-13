@@ -12,10 +12,11 @@ permissions:
 jobs:
   test:
     permissions:
-      contents: read
-      checks: write # required for codecov
-      pull-requests: write # required for codecov
-      actions: write # required for uploading artifacts
+      # Required for codecov
+      checks: write
+      pull-requests: write
+      # Required for uploading artifacts
+      actions: write
     name: test
     runs-on: ubuntu-latest
     strategy:
