@@ -10,7 +10,7 @@ permissions:
 jobs:
   UpdateOffsets:
     permissions:
-      contents: write  # Required for creating PRs
+      contents: write  # required for pushing changes
     runs-on: ubuntu-latest
     steps:
     - name: "Checkout repo"
